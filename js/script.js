@@ -2,6 +2,8 @@
 let menuIcon = document.querySelector('#menu-icon'); // Changed to menuIcon to match the rest of the code
 let navbar = document.querySelector('.navbar');
 
+import blogPosts from './blogPosts.js';
+
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
     navbar.classList.toggle('active');
@@ -41,3 +43,21 @@ window.onscroll = () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 }
+
+// import blogPosts from './blogPosts.js';
+
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('blog-container');
+    
+    blogPosts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.className = 'blog-post';
+        postElement.innerHTML = `
+            <h3><a href="post${post.id}.html">${post.title}</a></h3>
+            <p>${post.content}</p>
+            <p class="text-right"><small>written by ${post.author}</small></p>
+            <p class="text-right"><small>Posted on ${post.date}</small></p>
+        `;
+        container.appendChild(postElement);
+    });
+});

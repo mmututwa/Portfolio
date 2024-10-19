@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #20c20e;
+    --main-color: #00abf0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+/* Header Styles */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky {
+    background: var(--bg-color);
+}
+
+.logo {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.navbar {
+    position: relative;
+}
+
+.navbar a {
+    font-size: 2.8rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon {
+    font-size: 3.6rem;
+    color: var(--text-color);
+    cursor: pointer;
+    display: none;
+}
+
+main {
+    background: url('/Images/Cybersecurity/Cyber.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;  /* Makes the background image stick */
+    position: relative;
+    min-height: 100vh;
+}
+
+main::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(8, 27, 41, 0.8);
+    z-index: 0;
+}
+
+.blog-section {
+    position: relative;
+    z-index: 1;
+    padding-top: 10rem;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.blog-post {
+    position: relative;
+    max-width: 800px;
+    margin: 2rem 0;
+    padding: 3rem;
+    background: var(--bg-color);
+    border-radius: 1px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-left: 9%; /* Matches your header's padding */
+}
+
+.blog-post::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(to right, var(--main-color), var(--bg-color), var(--bg-color), var(--bg-color), var(--bg-color), var(--bg-color),  var(--text-color));
+    z-index: -1;
+    border-radius: 1px;
+}
+
+.blog-post h3 {
+    font-size: 2.4rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.blog-post p {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.blog-post a {
+    color: var(--main-color);
+    transition: .3s;
+}
+
+.blog-post a:hover {
+    text-decoration: underline;
+}
+
+/* Footer Styles */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p {
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: .6rem;
+    transition: .5s;
+}
+
+.footer-iconTop a:hover {
+    background: var(--second-bg-color);
+}
+
+.footer-iconTop a i {
+    font-size: 2.4rem;
+    color: var(--bg-color);
+    transition: .5s;
+}
+
+.footer-iconTop a:hover i {
+    color: var(--main-color);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    .blog-section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .footer {
+        padding: 2rem 4%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: -100%;
+        width: 100%;
+        padding: 1rem 4%;
+        background: var(--bg-color);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        transition: .25s ease;
+    }
+
+    .navbar.active {
+        left: 0;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+}
+
+@media (max-width: 520px) {
+    html {
+        font-size: 50%;
+    }
+
+    .blog-post {
+        margin: 2rem 1rem;
+        padding: 2rem;
+    }
+}
+
+.text-right {
+    text-align: right;
+    font-size: 1.4rem; /* Adjust font size if needed */
+}
+
+.navbar .nav-btn {
+    color: linear-gradient(to right, #00abf0, #0889a8, #10b67f, #189c5a, #20c20e);
+    background: none;
+    padding: 0.5rem 1rem;
+    font-size: 2.8rem;
+    font-weight: 100;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.navbar .nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #00abf0, #0889a8, #10b67f, #189c5a, #20c20e);
+    z-index: -1;
+    padding: 1px;
+    border-radius: 0;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+.navbar .nav-btn:hover {
+    color: var(--main-color);
+}
+
+.navbar .nav-btn {
+    color: var(--text-color);
+    background: none;
+    padding: 0.5rem 1rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    transition: .3s;
+}
+
+.navbar .nav-btn:hover {
+    color: var(--main-color);
+}
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px; /* Spacing between logo and text */
+}
+
+.logo span {
+    font-size: 2.5rem;
+    color: var(--text-color); /* Use your color variable */
+    font-weight: 600;
+}
