@@ -93,7 +93,7 @@ section {
     display: flex;
     align-items: center;
     padding: 0 9%;
-    background: url(/Images/Shared/GreySuit.png) no-repeat;
+    background: url(../Images/Shared/GreySuit.png) no-repeat;
     background-size: 75%; /* Resize the image as needed */
     background-position: right center; /* Move the image to the extreme right */
 }
