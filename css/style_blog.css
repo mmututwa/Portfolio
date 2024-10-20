@@ -28,7 +28,6 @@ body {
     color: var(--text-color);
 }
 
-/* Header Styles */
 .header {
     position: fixed;
     top: 0;
@@ -48,6 +47,17 @@ body {
 }
 
 .logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: 40px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.logo span {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
@@ -70,6 +80,39 @@ body {
     color: var(--main-color);
 }
 
+.navbar .nav-btn {
+    color: var(--text-color);
+    background: none;
+    padding: 0.5rem 1rem;
+    font-size: 2.8rem;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.navbar .nav-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to right, #00abf0, #0889a8, #10b67f, #189c5a, #20c20e);
+    z-index: -1;
+    padding: 1px;
+    border-radius: 0;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+}
+
+.navbar .nav-btn:hover {
+    color: var(--main-color);
+}
+
 #menu-icon {
     font-size: 3.6rem;
     color: var(--text-color);
@@ -81,7 +124,7 @@ main {
     background: url('/Images/Cybersecurity/Cyber.png') no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;  /* Makes the background image stick */
+    background-attachment: fixed;
     position: relative;
     min-height: 100vh;
 }
@@ -101,19 +144,20 @@ main::before {
     position: relative;
     z-index: 1;
     padding-top: 10rem;
-    margin: 0;
+    padding-left: 9%;
+    padding-right: 9%;
     min-height: 100vh;
 }
 
 .blog-post {
     position: relative;
+    width: 100%;
     max-width: 800px;
-    margin: 2rem 0;
+    margin: 0 0 3rem;
     padding: 3rem;
     background: var(--bg-color);
-    border-radius: 1px;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-left: 9%; /* Matches your header's padding */
 }
 
 .blog-post::before {
@@ -123,9 +167,9 @@ main::before {
     left: -2px;
     right: -2px;
     bottom: -2px;
-    background: linear-gradient(to right, var(--main-color), var(--bg-color), var(--bg-color), var(--bg-color), var(--bg-color), var(--bg-color),  var(--text-color));
+    background: linear-gradient(to right, #0c98da, #081b29, #081b29, #081b29, #081b29, #081b29, #081b29, #00ff00);
     z-index: -1;
-    border-radius: 1px;
+    border-radius: 10px;
 }
 
 .blog-post h3 {
@@ -149,7 +193,28 @@ main::before {
     text-decoration: underline;
 }
 
-/* Footer Styles */
+.post-meta {
+    margin: 1rem 0;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.tag {
+    background: var(--main-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 2rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem;
+    color: var(--bg-color);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -187,7 +252,6 @@ main::before {
     color: var(--main-color);
 }
 
-/* Responsive Design */
 @media (max-width: 1200px) {
     html {
         font-size: 55%;
@@ -244,70 +308,4 @@ main::before {
         margin: 2rem 1rem;
         padding: 2rem;
     }
-}
-
-.text-right {
-    text-align: right;
-    font-size: 1.4rem; /* Adjust font size if needed */
-}
-
-.navbar .nav-btn {
-    color: linear-gradient(to right, #00abf0, #0889a8, #10b67f, #189c5a, #20c20e);
-    background: none;
-    padding: 0.5rem 1rem;
-    font-size: 2.8rem;
-    font-weight: 100;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-}
-
-.navbar .nav-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(to right, #00abf0, #0889a8, #10b67f, #189c5a, #20c20e);
-    z-index: -1;
-    padding: 1px;
-    border-radius: 0;
-    mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0);
-    mask-composite: exclude;
-}
-
-.navbar .nav-btn:hover {
-    color: var(--main-color);
-}
-
-.navbar .nav-btn {
-    color: var(--text-color);
-    background: none;
-    padding: 0.5rem 1rem;
-    font-size: 2.8rem;
-    font-weight: 500;
-    transition: .3s;
-}
-
-.navbar .nav-btn:hover {
-    color: var(--main-color);
-}
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo-img {
-    width: 40px; /* Adjust the size as needed */
-    height: auto;
-    margin-right: 10px; /* Spacing between logo and text */
-}
-
-.logo span {
-    font-size: 2.5rem;
-    color: var(--text-color); /* Use your color variable */
-    font-weight: 600;
 }
